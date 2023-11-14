@@ -31,7 +31,7 @@ const app = createApp({
         },
       ],
       activeIndex: 0,
-      autoPlay: true,
+      autoPlay: setInterval(this.showNext, 3000),
     };
   },
 
@@ -39,42 +39,21 @@ const app = createApp({
     showNext: function () {
       if (this.activeIndex === this.slides.length - 1) {
         this.activeIndex = 0;
-        console.log(this.slides.length);
-        console.log(this.activeIndex);
-        console.log(this.slides[this.activeIndex].image);
       } else {
         this.activeIndex++;
-        console.log(this.slides.length);
-        console.log(this.activeIndex);
-        console.log(this.slides[this.activeIndex].image);
       }
     },
     showPrev: function () {
       if (this.activeIndex === 0) {
         this.activeIndex = this.slides.length - 1;
-        console.log(this.slides.length);
-        console.log(this.activeIndex);
-
-        console.log(this.slides[this.activeIndex].image);
       } else {
         this.activeIndex--;
-        console.log(this.activeIndex);
-        console.log(this.slides.length);
-        console.log(this.slides[this.activeIndex].image);
       }
     },
-  },
 
-  //   mounted() {
-  //     setInterval(function () {
-  //       if (this.autoPlay === true) {
-  //         if (this.activeIndex === this.slides.length - 1) {
-  //           this.activeIndex = 0;
-  //         } else {
-  //           this.activeIndex++;
-  //         }
-  //       }
-  //     }, 1000);
-  //   },
+    // stopAutoPlay: function () {
+    //   clearInterval(this.autoPlay);
+    // },
+  },
 });
 app.mount("#app");
