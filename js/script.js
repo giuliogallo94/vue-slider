@@ -35,7 +35,9 @@ const app = createApp({
   },
 
   methods: {
-    // showImage: ,
+    showClicked: function () {
+      console.log(slides);
+    },
     showNext: function () {
       if (this.activeIndex === this.slides.length - 1) {
         this.activeIndex = 0;

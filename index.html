@@ -28,17 +28,15 @@
           <div class="col px-0">
             <div class="thumbnails d-flex flex-column">
               <div class="thumbnails-item">
-                <!-- <img
-                  v-for="(slides.image) in slides"
-                  :src="slides.image"
+                <img
+                  v-for="(img, index) in slides"
+                  :src="slides[index].image"
                   alt=""
-                  :class="index === activeIndex ? 'active' : ''" /> -->
+                  @click="showClicked" />
               </div>
-              `;
               <div class="prev" @click="showPrev"></div>
               <div class="next" @click="showNext"></div>
             </div>
-            <!-- <img src="" alt=""> -->
           </div>
 
           <!-- <div class="col-12 text-center p-3">
