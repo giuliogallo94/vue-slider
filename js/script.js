@@ -51,9 +51,9 @@ const app = createApp({
       }
     },
 
-    // stopAutoPlay: function () {
-    //   clearInterval(this.autoPlay);
-    // },
+    stopAutoPlay: function () {
+      clearInterval(this.autoPlay);
+    },
   },
 });
 app.mount("#app");
