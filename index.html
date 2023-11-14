@@ -31,8 +31,9 @@
                 <img
                   v-for="(img, index) in slides"
                   :src="slides[index].image"
+                  :key="index"
                   alt=""
-                  @click="showClicked" />
+                  @click="activeIndex = index" />
               </div>
               <div class="prev" @click="showPrev"></div>
               <div class="next" @click="showNext"></div>

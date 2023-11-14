@@ -31,13 +31,11 @@ const app = createApp({
         },
       ],
       activeIndex: 0,
+      autoPlay: true,
     };
   },
 
   methods: {
-    showClicked: function () {
-      console.log(slides);
-    },
     showNext: function () {
       if (this.activeIndex === this.slides.length - 1) {
         this.activeIndex = 0;
@@ -66,5 +64,17 @@ const app = createApp({
       }
     },
   },
+
+  //   mounted() {
+  //     setInterval(function () {
+  //       if (this.autoPlay === true) {
+  //         if (this.activeIndex === this.slides.length - 1) {
+  //           this.activeIndex = 0;
+  //         } else {
+  //           this.activeIndex++;
+  //         }
+  //       }
+  //     }, 1000);
+  //   },
 });
 app.mount("#app");
