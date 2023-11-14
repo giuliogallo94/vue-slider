@@ -17,10 +17,7 @@
   <body>
     <div id="app">
       <div class="container">
-        <div
-          class="row"
-          @mouseover="stopAutoPlay"
-          @mouseleave="autoPlay = setInterval(this.showNext, 3000)">
+        <div class="row" @mouseover="stopAutoPlay" @mouseleave="reAutoPlay">
           <div class="col px-0">
             <div class="items">
               <div class="item">
