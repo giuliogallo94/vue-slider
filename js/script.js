@@ -31,7 +31,7 @@ const app = createApp({
         },
       ],
       activeIndex: 0,
-      autoPlay: setInterval(this.showNext, 1000),
+      autoPlay: setInterval(this.showNext, 2000),
     };
   },
 
