@@ -16,8 +16,11 @@
 
   <body>
     <div id="app">
-      <div class="container">
-        <div class="row" @mouseover="stopAutoPlay" @mouseleave="reAutoPlay">
+      <div class="container" @keyup.up="showPrev" @keyup.down="showNext">
+        <div
+          class="row"
+          @mouseover="stopAutoPlay"
+          @mouseleave="reStartAutoPlay">
           <div class="col px-0">
             <div class="items">
               <div class="item">
@@ -31,11 +34,14 @@
           </div>
           <div class="col px-0">
             <div class="thumbnails d-flex flex-column">
-              <div v-for="(img, index) in slides" class="thumbnails-item">
+              <div
+                v-for="(img, index) in slides"
+                :key="index"
+                class="thumbnails-item">
                 <img
                   :src="slides[index].image"
                   :alt="slides[index].title"
-                  @click="activeIndex = index" />
+                  @click="showClicked(index)" />
               </div>
               <div class="prev" @click="showPrev"></div>
               <div class="next" @click="showNext"></div>

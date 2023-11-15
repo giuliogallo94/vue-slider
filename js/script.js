@@ -31,8 +31,12 @@ const app = createApp({
         },
       ],
       activeIndex: 0,
-      autoPlay: setInterval(this.showNext, 2000),
+      autoPlay: null,
     };
+  },
+
+  created() {
+    this.autoPlay = setInterval(this.showNext, 3000);
   },
 
   methods: {
@@ -51,16 +55,16 @@ const app = createApp({
       }
     },
 
-    // autoPlay: function (){
-    //     setInterval(this.showNext, 3000);
-    // },
+    showClicked: function (clickedIndex) {
+      this.activeIndex = clickedIndex;
+    },
 
     stopAutoPlay: function () {
       clearInterval(this.autoPlay);
     },
 
-    reAutoPlay: function () {
-      setInterval(this.showNext, 3000);
+    reStartAutoPlay: function () {
+      this.autoPlay = setInterval(this.showNext, 3000);
     },
   },
 });
